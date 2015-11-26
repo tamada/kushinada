@@ -1,5 +1,7 @@
 # KUSHINADA
 
+[![Build Status](https://travis-ci.org/tamada/kushinada.svg)](https://travis-ci.org/tamada/kushinada)
+
 ## Overview
 
 Web interface for birthmarking toolkit.
