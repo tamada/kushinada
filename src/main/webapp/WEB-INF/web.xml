@@ -6,13 +6,50 @@
                              http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
 
+  <context-param>
+    <param-name>db.url</param-name>
+    <param-value>jdbc:h2:./kushinada/db;DB_CLOSE_ON_EXIT=FALSE</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db.user</param-name>
+    <param-value>sa</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db.password</param-name>
+    <param-value>sa</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db.tcpServer</param-name>
+    <param-value>-tcpAllowOthers</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>org.h2.server.web.DbStarter</listener-class>
+  </listener>
+
   <servlet>
-    <servlet-name>seatassigner</servlet-name>
-    <servlet-class>com.github.sckit.assign.SeatAssignServlet</servlet-class>
+    <servlet-name>H2Console</servlet-name>
+    <servlet-class>org.h2.server.web.WebServlet</servlet-class>
+    <!--
+      <init-param>
+        <param-name>webAllowOthers</param-name>
+        <param-value></param-value>
+      </init-param>
+      <init-param>
+        <param-name>trace</param-name>
+        <param-value></param-value>
+      </init-param>
+    -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>Initializer</servlet-name>
+    <servlet-class>com.github.kushinada.InitializeServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>seatassigner</servlet-name>
-    <url-pattern>/seatassigner</url-pattern>
+    <servlet-name>H2Console</servlet-name>
+    <url-pattern>/console/*</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -1,4 +1,6 @@
 ### https://raw.github.com/github/gitignore/da00310ccba9de9a988cc973ef5238ad2c1460e9/java.gitignore
+*~
+kushinada
 
 *.class
 
@@ -53,5 +55,48 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+### https://raw.github.com/github/gitignore/3ddb2f297fe8107c6c45a1afed1ff82204ae4227/Global/eclipse.gitignore
+
+*.pydevproject
+.metadata
+.gradle
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+# Eclipse Core
+.project
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# TeXlipse plugin
+.texlipse
 
 
