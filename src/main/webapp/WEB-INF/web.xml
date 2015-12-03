@@ -47,9 +47,25 @@
     <servlet-class>com.github.kushinada.InitializeServlet</servlet-class>
     <load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+    <servlet-name>DWRServlet</servlet-name>
+    <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>fileUploadMaxBytes</param-name>
+      <param-value>5000</param-value>
+    </init-param>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>H2Console</servlet-name>
     <url-pattern>/console/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DWRServlet</servlet-name>
+    <url-pattern>/dwr/*</url-pattern>
   </servlet-mapping>
 </web-app>

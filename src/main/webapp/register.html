@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="basic.css" />
+    <script type="text/javascript" src="dwr/interface/Registrar.js"></script>
+    <script type="text/javascript" src="dwr/engine.js"></script>
+    <script type="text/javascript" src="dwr/util.js"></script>
+    <title>Register Jar file(s)</title>
+  </head>
+
+  <body>
+    <header>
+      # of registered jar files: 
+    </header>
+    <article>
+      <section>
+        <h1>Register a jar file</h1>
+        <form method="post" id="jarfile">
+          Group Id: <input type="text" name="groupId" /><br/>
+          Artifact Id: <input type="text" name="artifactId" /><br/>
+          Version: <input type="text" name="version" /><br/>
+          <input type="file" name="file" /><br/>
+          <input type="button" value="Upload" onClick="">
+        </form>
+      </section>
+
+      <section>
+        <h1>Register jar files in a maven repository</h1>
+        <form method="post" id="maven">
+          Maven repository URL: <input type="text" name="repository">
+        </form>
+      </section>
+    </article>
+  </body>
+</html>
